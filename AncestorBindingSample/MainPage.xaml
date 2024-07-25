@@ -3,7 +3,8 @@
 	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	  xmlns:local="using:AncestorBindingSample"
 	  xmlns:utu="using:Uno.Toolkit.UI"
-	  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+	  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+	  Tag="From Page">
 	<Grid RowSpacing="20"
 		  HorizontalAlignment="Center">
 		<Grid.RowDefinitions>
@@ -18,26 +19,27 @@
 				<Run Text="{Binding SomeText}" />
 			</TextBlock.Inlines>
 		</TextBlock>
-		<Border Grid.Row="1">
-			<ListView ItemsSource="{Binding Items}"
-					  Tag="From ListView">
-				<ListView.ItemTemplate>
-					<DataTemplate>
-						<StackPanel>
-							<TextBlock Text="Current item DataContext:" />
-							<TextBlock FontWeight="Bold"
-									   Text="{Binding}" />
-							<TextBlock Text="Current parent (MainViewModel) DataContext:" />
-							<TextBlock FontWeight="Bold"
-									   Text="{utu:AncestorBinding AncestorType=ListView, Path=DataContext.SomeText}" />
-							<TextBlock Text="Accessing property of a parent ListView:" />
-							<TextBlock FontWeight="Bold"
-									   Text="{utu:AncestorBinding AncestorType=ListView, Path=Tag}" />
-						</StackPanel>
-					</DataTemplate>
-				</ListView.ItemTemplate>
-			</ListView>
-		</Border>
-
+		<ListView ItemsSource="{Binding Items}"
+				  Grid.Row="1"
+				  Tag="From ListView">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<StackPanel>
+						<TextBlock Text="Current item DataContext:" />
+						<TextBlock FontWeight="Bold"
+								   Text="{Binding}" />
+						<TextBlock Text="Current parent (MainViewModel) DataContext:" />
+						<TextBlock FontWeight="Bold"
+								   Text="{utu:AncestorBinding AncestorType=ListView, Path=DataContext.SomeText}" />
+						<TextBlock Text="Accessing property of a parent ListView:" />
+						<TextBlock FontWeight="Bold"
+								   Text="{utu:AncestorBinding AncestorType=ListView, Path=Tag}" />
+						<TextBlock Text="Accessing property of a Page:" />
+						<TextBlock FontWeight="Bold"
+								   Text="{utu:AncestorBinding AncestorType=Page, Path=Tag}" />
+					</StackPanel>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
 	</Grid>
 </Page>
