@@ -4,7 +4,8 @@
 	  xmlns:local="using:AncestorBindingSample"
 	  xmlns:utu="using:Uno.Toolkit.UI"
 	  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-	<Grid RowSpacing="20" HorizontalAlignment="Center">
+	<Grid RowSpacing="20"
+		  HorizontalAlignment="Center">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
@@ -24,11 +25,14 @@
 					<DataTemplate>
 						<StackPanel>
 							<TextBlock Text="Current item DataContext:" />
-							<TextBlock FontWeight="Bold" Text="{Binding }" />
-							<TextBlock Text="Current parent(ExampleModel) DataContext:" />
-							<TextBlock FontWeight="Bold" Text="{utu:AncestorBinding AncestorType=ListView, Path=DataContext.SomeText}" />
+							<TextBlock FontWeight="Bold"
+									   Text="{Binding}" />
+							<TextBlock Text="Current parent (MainViewModel) DataContext:" />
+							<TextBlock FontWeight="Bold"
+									   Text="{utu:AncestorBinding AncestorType=ListView, Path=DataContext.SomeText}" />
 							<TextBlock Text="Accessing property of a parent ListView:" />
-							<TextBlock FontWeight="Bold" Text="{utu:AncestorBinding AncestorType=ListView, Path=Tag}" />
+							<TextBlock FontWeight="Bold"
+									   Text="{utu:AncestorBinding AncestorType=ListView, Path=Tag}" />
 						</StackPanel>
 					</DataTemplate>
 				</ListView.ItemTemplate>
