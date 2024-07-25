@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "AncestorBindingSample",
+  "display": "standalone",
+  "name": "AncestorBindingSample",
+  "short_name": "AncestorBindingSample",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
